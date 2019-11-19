@@ -1,6 +1,16 @@
 from scapy.all import *
 import sys
 
+'''
+Simple port scanner detector. 
+
+This was created with Python3, Python2 may or may not work. 
+You need to have scapy installed, you can do that with the command "pip install scapy"
+
+Run the program on any pcap file with the command "python detector.py filename.pcap".
+
+'''
+
 def main():
 	if(len(sys.argv) != 2):
 		print("Invalid arguments, should be \"python detector.py filename\"")
@@ -35,7 +45,7 @@ def main():
 	if len(filtered_ip_list) == 0:
 		print("No port scanners found in the given file")
 	else:
-		print("The following IP's were found to have port scanners")
+		print("The following IP's were found to have using port scanners")
 		for i in filtered_ip_list:
 			print(i)
 
